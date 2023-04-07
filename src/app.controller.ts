@@ -27,4 +27,9 @@ export class AppController {
 
     return profileBuffer;
   }
+
+  @Post('/profile/heap-snapshot')
+  async makeHeapSnapshot() {
+    return this.inspector.heap.takeSnapshot();
+  }
 }
